@@ -1,11 +1,12 @@
 from Bot.Strategies.RandomStrategy import RandomStrategy
-from Bot.Strategies.NaiveStrategy import NaiveStrategy
+from Bot.Strategies.GeneticStrategy import GeneticStrategy
+
 
 def create(strategyType, game):
     """Factory method for planners."""
     switcher = {
         "random": RandomStrategy(game),
-        "naive": NaiveStrategy(game)
+        "genetic": GeneticStrategy(game)
     }
 
     strategy = switcher.get(strategyType.lower())
